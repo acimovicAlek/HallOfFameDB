@@ -1,0 +1,254 @@
+    *{
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+    }
+
+    body{
+        background: #C5C1C0;
+        width: 100%;
+        margin: 0 auto;
+        font-family: Roboto;
+    }
+
+    .container{
+        min-width: 320px;
+        max-width: 980px;
+        margin: 0 auto;
+        min-height: 1px;
+    }
+
+    .row{
+        width: 100%;
+        float: left;
+        min-height: 1px;
+        display: block;
+    }
+
+    .col{
+        margin-left: 1%;
+        margin-right: 1%;
+        min-height: 20px;
+        display: inline-block;
+        float: left;
+    }
+
+    .col:first-child{
+        margin-left: 0px;
+    }
+
+    .col:last-child{
+        margin-right: 0px;
+    }
+
+    .col.span_4 {
+        width: 100%;
+    }
+
+    .col.span_3 {
+        width: 74%;
+    }
+
+    .col.span_2 {
+        width: 48%;
+    }
+
+    .col.span_1 {
+        width: 22%;
+    }
+a{
+    text-decoration-style: none;
+    text-decoration: none;
+}
+
+.nav{
+    background-color: #444;
+}
+
+.nav ul {
+  list-style: none;
+  background-color: #444;
+  text-align: center;
+  padding: 0;
+  margin: 0;
+}
+.nav li {
+    background-color: #444;
+  font-family: 'Oswald', sans-serif;
+  font-size: 1.2em;
+  line-height: 40px;
+  height: 40px;
+border-bottom: 1px solid #888;
+display: inline-block;
+width: 10%; 
+}
+ 
+.nav a {
+  text-decoration: none;
+  color: #fff;
+  display: block;
+  transition: .3s background-color;
+}
+ 
+.nav a:hover {
+  background-color: #005f5f;
+}
+ 
+.nav a.active {
+  background-color: #fff;
+  color: #444;
+  cursor: default;
+}
+
+
+
+@media (max-width:768px){
+    .col.span_2{
+        width: 100%;
+    }
+}
+
+
+@media only screen and (max-width:768px){
+    body{
+        width: 100%!important;
+    }
+    .col:last-child{
+        margin-right: 0px;
+    }
+
+    .col.span_4 {
+        width: 100%!important;
+    }
+
+    .col.span_3 {
+        width: 74%!important;
+    }
+
+    .col.span_2 {
+        width: 48%;
+        display: none;
+    }
+
+    .col.span_1 {
+        position: relative;
+        width: 60%;
+        left: 20%;
+    }
+    
+    .row{
+        align-content: center;
+    }
+    
+    
+    .celeb{
+        align-content: center;
+        margin: 5px 0px;
+    }
+    
+    .nav li{
+        display: block;
+        width:100%!important;
+        float:left;
+    }
+    .collapse{
+        display: none;
+    }
+}
+
+
+@media only screen and (max-width : 372px) {
+  
+    body{ 
+        width:100%!important;
+        align-content: center;
+    }
+
+    .col.span_4{
+        width: 100%!important;
+    }
+  
+    .col.span_3{ 
+        width: 74%!important;
+    }
+  
+    .col.span_2{
+      width: 48%!important;
+    }
+  
+    .col.span_1{
+      width: 50%;
+        align-items: center;
+    }
+    
+    .celeb{
+        align-content: center;
+        margin: 5px 0px;
+    }
+    
+    .nav li{
+        display: block;
+        width:100%!important;
+        float:left;
+    }
+
+    .row{
+        align-content: center;
+    }
+    
+    .collapse{
+        display: none;
+    }
+}
+
+.heading{
+    width: 100%;
+    color: #444;
+    text-align: center;
+    border-bottom: 1px solid;
+    border-color: #444;
+    font-family: 'Oswald', sans-serif;
+    font-size: 40px;
+    margin: 10px 0px;
+}
+
+.row.celeb_home{
+    margin: 15px 0;
+}
+
+.col.span_1.celeb{
+    border: 1px solid #444;
+    overflow: hidden;
+}
+
+.celeb.image_small{
+    margin: auto;
+    text-align: center;
+    font-family: 'Oswald', sans-serif;
+    background-size:contain;
+    background-position: center;
+    background-image: url('https://cdn2.iconfinder.com/data/icons/movie-8/500/award-512.png');
+    height: 180px;
+    width: 180px;
+    border-bottom: 1px solid #444;
+}
+
+.celeb.name_home{
+    text-align: center;
+    font-family: 'Oswald', sans-serif;
+    margin: auto;
+    color: #444;
+    font-size: 24px;
+    font-weight: 200;
+}
+
+.row.footer{
+    height: 10%;
+    background: #444;
+    text-align: center;
+    font-family: 'Oswald', sans-serif;
+    font-size: 20px;
+    font-weight: lighter;
+    color: white;
+    padding: 15px;
+}
