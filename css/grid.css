@@ -348,8 +348,8 @@ width: 10%;
 .login_form{
     position: relative;
     top: 10%;
-    left: 35%;
-    width: 30%;
+    left: 30%;
+    width: 40%;
 }
 
 .login_form input[type=text] {
@@ -386,8 +386,8 @@ width: 10%;
 .contact_form{
     position: relative;
     top: 10%;
-    left: 35%;
-    width: 30%;
+    left: 30%;
+    width: 40%
 }
 
 .contact_form input{
@@ -417,4 +417,18 @@ width: 10%;
     border: none;
     cursor: pointer;
     width: 100%
+}
+
+.contact_form  input[type=file]{
+    background-color: white;
+    font-family: 'Oswald', sans-serif;
+    font-weight: lighter;
+    color: grey;
+    align-self: center;
+    width: 100%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    box-sizing: border-box;
 }
