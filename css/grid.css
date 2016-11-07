@@ -8,7 +8,6 @@
         background: #C5C1C0;
         width: 100%;
         margin: 0 auto;
-        font-family: Roboto;
     }
 
     .container{
@@ -157,7 +156,7 @@ width: 10%;
 }
 
 
-@media only screen and (max-width : 372px) {
+@media only screen and (max-width : 372px){
   
     body{ 
         width:100%!important;
@@ -190,6 +189,96 @@ width: 10%;
         display: block;
         width:100%!important;
         float:left;
+    }
+
+    .row{
+        align-content: center;
+    }
+    
+    .collapse{
+        display: none;
+    }
+}
+
+@media screen and (device-width : 360px){
+  
+    body{ 
+        width:100%!important;
+        align-content: center;
+    }
+
+    .col.span_4{
+        width: 100%!important;
+    }
+  
+    .col.span_3{ 
+        width: 74%!important;
+    }
+  
+    .col.span_2{
+      width: 48%!important;
+    }
+  
+    .col.span_1{
+      width: 50%;
+        align-items: center;
+    }
+    
+    .celeb{
+        align-content: center;
+        margin: 5px 0px;
+    }
+    
+    .nav li{
+        display: block;
+        width:100%!important;
+        float:left;
+        font-size: 3.0em;
+    }
+
+    .row{
+        align-content: center;
+    }
+    
+    .collapse{
+        display: none;
+    }
+}
+
+@media screen and (device-width : 412px){
+  
+    body{ 
+        width:100%!important;
+        align-content: center;
+    }
+
+    .col.span_4{
+        width: 100%!important;
+    }
+  
+    .col.span_3{ 
+        width: 74%!important;
+    }
+  
+    .col.span_2{
+      width: 48%!important;
+    }
+  
+    .col.span_1{
+      width: 50%;
+        align-items: center;
+    }
+    
+    .celeb{
+        align-content: center;
+        margin: 5px 0px;
+    }
+    
+    .nav li{
+        display: block;
+        width:100%!important;
+        float:left;
+        font-size: 3.0em;
     }
 
     .row{
@@ -251,4 +340,47 @@ width: 10%;
     font-weight: lighter;
     color: white;
     padding: 15px;
+    position: fixed;
+    bottom: 0%;
+}
+
+.login_form form {
+    border: 3px solid #f1f1f1;
+}
+
+.login_form{
+    position: relative;
+    top: 10%;
+    left: 35%;
+    width: 30%;
+}
+
+.login_form input[type=text] {
+    align-self: center;
+    width: 100%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    box-sizing: border-box;
+}
+
+.login_form  input[type=password]{
+    align-self: center;
+    width: 100%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    box-sizing: border-box;
+}
+
+.login_form button{
+    background-color: #444;
+    color: white;
+    padding: 14px 20px;
+    margin: 8px 0;
+    border: none;
+    cursor: pointer;
+    width: 100%
 }
