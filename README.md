@@ -35,7 +35,7 @@ Urađeno je:
     - Gallery on Click otvaranje slike
 - AjaxLoad učitavanje stranica  
 
-U testiranju nisu primjećeni bug-ovi
+Galerija kada se kod manjih prozora bjezi na lijevo
 
 Lista fajlova:
 -add_celebs.html
