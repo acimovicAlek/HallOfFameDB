@@ -4,8 +4,10 @@
             </div>
         <div class="login_form">
             <form action="#" method = "get">
-            <input type="text" placeholder="Enter Username" name="uname" required>
-            <input type="password" placeholder="Enter Password" name="psw" required>
+            <div id="error_username" class="hide">Username is not valid!</div>
+            <input id="username_inp" type="text" placeholder="Enter Username" name="uname" onfocusout="validateName('username_inp','error_username')" required>
+            <div id = "error_password" class = "hide">Password is not valid!</div>
+            <input id = "password_inp" type="password" placeholder="Enter Password" name="psw" onfocusout="validatePassword('password_inp','error_password')" required>
 
             <button type="submit">Login</button>
             </form>

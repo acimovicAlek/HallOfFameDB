@@ -27,10 +27,68 @@ function ajaxLoad(page) {
     var xhttp = new XMLHttpRequest();
     xhttp.onreadystatechange = function () {
         if (this.readyState == 4 && this.status == 200) {
-            document.getElementById("pageContainer").innerHTML = this.resoponseText;
+            document.getElementById("pageContainer").innerHTML = this.responseText;
         }
     };
     xhttp.open("GET", page, true);
     xhttp.send();
 }
-window.onload = ajaxLoad('home.html');
+window.document.onload = ajaxLoad('home.html');
+
+//Validacija
+
+function validateName (validating, errormsg) {
+    var name = document.getElementById(validating).value;
+    if(!name.match(/\w{5}/ig)) {
+        document.getElementById(errormsg).className = "errormsg";
+        return false;
+    }else {
+        document.getElementById(errormsg).className = "hide";
+        return true;
+    }
+}
+
+function validatePassword (validating, errormsg) {
+    var name = document.getElementById(validating).value;
+    if(name.match(/^$|\s+/ig)) {
+        document.getElementById(errormsg).className = "errormsg";
+        return false;
+    }else {
+        document.getElementById(errormsg).className = "hide";
+        return true;
+    }
+}
+
+function validateLogin(){
+    return validateName("username_inp" , "error_username") && validatePassword("password_inp" , "error_password");
+}
+
+function validateDescription(validating, errormsg) {
+    var name = document.getElementById(validating).value;
+    if(!name.match(/^.{20,100}$/ig)) {
+        document.getElementById(errormsg).className = "errormsg";
+        return false;
+    }else {
+        document.getElementById(errormsg).className = "hide";
+        return true;
+    }
+}
+
+function validateEmail (validating, errormsg) {
+    var name = document.getElementById(validating).value;
+    if(!name.match(/^[-a-z0-9~!$%^&*_=+}{\'?]+(\.[-a-z0-9~!$%^&*_=+}{\'?]+)*@([a-z0-9_][-a-z0-9_]*(\.[-a-z0-9_]+[a-z][a-z])|([0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}))(:[0-9]{1,5})?$/i)) {
+        document.getElementById(errormsg).className = "errormsg";
+        return false;
+    }else {
+        document.getElementById(errormsg).className = "hide";
+        return true;
+    }
+}
+
+function validateContact(){
+    return validateName("name_inp" , "error_name") && validateEmail("mail_inp" , "error_mail") && validateDescription("msg_inp" , "error_msg");
+}
+
+function validateCeleb(){
+    return validateName("name_inp" , "error_name") && validateDescription("desc_inp" , "error_desc");
+}

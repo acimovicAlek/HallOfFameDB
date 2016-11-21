@@ -517,3 +517,14 @@ width: 10%;
 .content{
     
 }
+
+.errormsg{
+    display: block;
+    text-align: center;
+    color: red;
+    font-size: 15px;
+}
+
+.hide{
+    display: none;
+}

@@ -3,11 +3,13 @@
                 <div class = "heading">Add new celeb!</div>
             </div>
         <div class="contact_form">
-            <form action="#" method = "post">
-            <input type="text" placeholder="Enter Name" name="celebf_name" required>
+            <form action="#" method = "post" onsubmit="return validateCeleb()">
+            <div id="error_name" class = "hide">Name is not valid!</div>
+            <input id="name_inp" type="text" placeholder="Enter Name" name="celebf_name" onfocusout="validateName('name_inp','error_name')" required>
                 <input type="file" name="celeb_image">
-                <textarea placeholder = "Enter info" name = "celebf_info"></textarea>
-            <button type="submit">Submit</button>
+                <div id="error_desc" class = "hide">Description is not valid!</div>
+                <textarea id="desc_inp" placeholder = "Enter info" name = "celebf_info" onfocusout="validateDescription('desc_inp','error_desc')"></textarea>
+            <button type="submit" >Submit</button>
             </form>
         </div>
         </div>
