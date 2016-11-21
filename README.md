@@ -42,9 +42,9 @@ Lista fajlova:
 -adminlogin.html
 -contact.html
 -home.html
--css/grid.css
+-css/grid.css (sav still)
 -css/stil.css (panirano odvojiti stilove)
--gallery.html
+-gallery.html (Galerija)
 -index.html (odavde se loadaju sve ostale stranice)
--js/scripts.js
--img/celeb.jpg
+-js/scripts.js (JavaScripte)
+-img/celeb.jpg (slika testna)
