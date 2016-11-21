@@ -33,7 +33,7 @@
     }
 
     .col:first-child{
-        margin-left: 0px;
+        margin-left: px;
     }
 
     .col:last-child{
@@ -153,6 +153,14 @@ width: 10%;
     .collapse{
         display: none;
     }
+    .gallery{
+        margin :5px 0px;
+        align-content: center;
+    }
+    
+    .col.span_1.celeb:first-child{
+    margin-left: 0px    ;
+    }
 }
 
 
@@ -197,6 +205,14 @@ width: 10%;
     
     .collapse{
         display: none;
+    }
+    .gallery{
+        margin :5px 0px;
+        align-content: center;
+    }
+    
+    .col.span_1.celeb:first-child{
+    margin-left: 0px;
     }
 }
 
@@ -244,6 +260,14 @@ width: 10%;
     .collapse{
         display: none;
     }
+    .gallery{
+        margin :5px 0px;
+        align-content: center;
+    }
+    
+    .col.span_1.celeb:first-child{
+    margin-left: 0px;
+    }
 }
 
 @media screen and (device-width : 412px){
@@ -290,6 +314,15 @@ width: 10%;
     .collapse{
         display: none;
     }
+    
+    .gallery{
+        margin :5px 0px;
+        align-content: center;
+    }
+    
+    .col.span_1.celeb:first-child{
+    margin-left: 0px;
+    }
 }
 
 .heading{
@@ -305,6 +338,8 @@ width: 10%;
 
 .row.celeb_home{
     margin: 15px 0;
+    align-content: center;
+    padding-left: 3%;
 }
 
 .col.span_1.celeb{
@@ -433,4 +468,52 @@ width: 10%;
     display: inline-block;
     border: 1px solid #ccc;
     box-sizing: border-box;
+}
+
+.row.gallery{
+    margin: 15px 0;
+}
+
+.col._span1.gallery{
+    border: 1px solid #444;
+    overflow: hidden;
+}
+
+.gallery img{
+    margin: auto;
+    height: 200px;
+    width: 200px; 
+    border: 1px solid #444;
+    overflow: hidden;
+}
+
+.image_show {
+    position: fixed;
+    height: 100vh;
+    background: rgba(0, 0, 0, 0.5);
+    display: none;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    overflow: hidden;
+}
+
+.image_container {
+    position: absolute;
+    border-radius: 5px;
+    display: inline-block;
+    top: 10vh;
+    margin-left: 0;
+    overflow: hidden;
+}
+
+.cont_gallery{
+    margin: 15px 0;
+    align-content: center;
+    padding-left: 3%;
+}
+
+.content{
+    
 }
