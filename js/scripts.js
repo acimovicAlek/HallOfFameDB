@@ -90,5 +90,5 @@ function validateContact(){
 }
 
 function validateCeleb(){
-    return validateName("name_inp" , "error_name") && validateDescription("desc_inp" , "error_desc");
+    return validateName("name_inp" , "error_name");
 }
