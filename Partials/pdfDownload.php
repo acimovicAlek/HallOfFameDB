@@ -1,7 +1,7 @@
 <?php
     
     if (file_exists("../XML/celebs.xml")) {
-        $celebs = simplexml_load_file($_SERVER['DOCUMENT_ROOT'] . '/HallOfFameDB/XML/celebs.xml');
+        $celebs = simplexml_load_file('../XML/celebs.xml');
         
         require('../fpdf.php');
     
