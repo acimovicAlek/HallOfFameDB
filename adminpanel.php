@@ -7,10 +7,10 @@ if(isset($_SESSION["admin"])){
                 <div class = "heading">Admin Panel!</div>
             </div>
             <?php
-    $content = file_get_contents($_SERVER['DOCUMENT_ROOT'] . '/HallOfFameDB/XML/celebs.xml');
+    $content = file_get_contents('../XML/celebs.xml');
     if(strlen($content) != 0)
     {
-        $celebs = simplexml_load_file($_SERVER['DOCUMENT_ROOT'] . '/HallOfFameDB/XML/celebs.xml');
+        $celebs = simplexml_load_file('../XML/celebs.xml');
         $i = 0;
         echo("<table style='width:100%; border: 1px solid black; padding:10px 10px;'>");
         echo("<tr>
