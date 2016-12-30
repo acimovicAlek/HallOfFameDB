@@ -1,4 +1,7 @@
-        <div class = "container">
+<?php
+    include 'Partials/header.php';
+?>       
+<div class = "container">
             <div class = "row">
                 <div class = "heading">Contact us!</div>
             </div>
@@ -14,6 +17,6 @@
             </form>
         </div>
         </div>
-        <div class = "row footer">
-                @Copyright Aleksandar Aćimović WT 2016
-            </div>
+<?php
+    include 'Partials/footer.php';
+?>

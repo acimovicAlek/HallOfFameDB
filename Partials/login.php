@@ -6,7 +6,7 @@ session_start();
         window.location.href='/HallOfFameDB/adminlogin.php';</script>");
     }
     
-    $feed = file_get_contents($_SERVER['DOCUMENT_ROOT'] . '/HallOfFameDB/XML/admins.xml');
+    $feed = file_get_contents('../XML/admins.xml');
     $admins = simplexml_load_string($feed);
     if($_POST["uname"] == $admins->username && $_POST["psw"] == $admins->password)
     {

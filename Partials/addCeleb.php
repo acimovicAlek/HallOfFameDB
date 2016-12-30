@@ -1,9 +1,9 @@
 <?php
     if(isset($_POST["celebf_name"]) && strlen(trim($_POST["celebf_name"])) != 0){
         global $celebs;
-        $content = file_get_contents($_SERVER["DOCUMENT_ROOT"] . "/HallOfFameDB/XML/celebs.xml");
+        $content = file_get_contents('../XML/celebs.xml');
         if(strlen($content) != 0){
-            $celebs = simplexml_load_file($_SERVER["DOCUMENT_ROOT"] . "/HallOfFameDB/XML/celebs.xml");
+            $celebs = simplexml_load_file('../XML/celebs.xml');
         }else{
             $celebs = new SimpleXMLElement('<?xml version="1.0" encoding="utf-8"?><celebs></celebs>');
             $c = $celebs->addChild("celeb");
@@ -11,11 +11,11 @@
             $c->addChild("name" , "FIRST");
             $c->addChild("description" , "FIRST Desc");
             $c->addChild("file" , "celeb.jpg");
-            $file = fopen($_SERVER["DOCUMENT_ROOT"] . "/HallOfFameDB/XML/celebs.xml","w");
+            $file = fopen('../XML/celebs.xml',"w");
             fwrite($file, $celebs->asXML());
         }
         
-        $content = file_get_contents($_SERVER["DOCUMENT_ROOT"] . "/HallOfFameDB/XML/celebs.xml");
+        $content = file_get_contents('../XML/celebs.xml');
         
         echo $content;
         
@@ -26,7 +26,7 @@
         $count = $count+1;
         
         
-        $target_dir = $_SERVER['DOCUMENT_ROOT'] ."/HallOfFameDB/img/";
+        $target_dir = "../img/";
         $target_file = $target_dir . basename($_FILES["celeb_image"]["name"]);
         $uploadOk = 1;
         $imageFileType = pathinfo($target_file,PATHINFO_EXTENSION);
@@ -72,7 +72,7 @@
         $new = "><celeb><id>".($count+1)."</id><name>".htmlspecialchars($_POST['celebf_name'])."</name><description>".htmlspecialchars($_POST["celebf_info"])." </description><file>".basename($_FILES["celeb_image"]["name"])."</file></celeb></celebs>";
         $content = substr($content,0,strlen($content)-10).$new;
         
-        file_put_contents($_SERVER['DOCUMENT_ROOT'] . '/HallOfFameDB/XML/celebs.xml', $content);
+        file_put_contents('../XML/celebs.xml', $content);
 
         
         header("Location: ../index.php");

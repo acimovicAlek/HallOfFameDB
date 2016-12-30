@@ -7,9 +7,9 @@
     <body>
         <div class="nav">
             <ul>
-                <li><a onclick = "ajaxLoad('home.html')">Home</a></li>
-                <li><a onclick = "ajaxLoad('contact.html')">Contact</a></li> 
-                <li><a onclick = "ajaxLoad('gallery.html')">Gallery</a></li>
+                <li><a href ="index.php">Home</a></li>
+                <li><a href = "contact.php">Contact</a></li> 
+                <li><a href = "gallery.php">Gallery</a></li>
                 
                 <?php
                 if(isset($_SESSION["admin"])){ 

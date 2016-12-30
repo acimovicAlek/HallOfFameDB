@@ -1,3 +1,6 @@
+<?php
+    include 'Partials/header.php';
+?> 
 <div class = "container">
             <div class = "row">
                 <div class = "heading">Gallery!</div>
@@ -38,4 +41,6 @@
         <img id = "image_container" src = "" alt = "">
     </div>
 </div>
-
+<?php
+    include 'Partials/footer.php';
+?>

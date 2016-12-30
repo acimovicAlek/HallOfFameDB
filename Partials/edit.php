@@ -1,5 +1,5 @@
 <?php
-    $celebs = simplexml_load_file($_SERVER['DOCUMENT_ROOT'] . '/HallOfFameDB/XML/celebs.xml'); 
+    $celebs = simplexml_load_file('../XML/celebs.xml'); 
     foreach($celebs->celeb as $i)
     {
         if($i->id == $_GET["id"]) {
@@ -8,6 +8,6 @@
         }
     }
     
-    file_put_contents($_SERVER['DOCUMENT_ROOT'] . '/HallOfFameDB/XML/celebs.xml', $celebs->asXML());
+    file_put_contents('../XML/celebs.xml', $celebs->asXML());
    header("Location: ../adminpanel.php");   
 ?>
