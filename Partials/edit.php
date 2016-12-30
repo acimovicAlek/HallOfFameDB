@@ -3,8 +3,8 @@
     foreach($celebs->celeb as $i)
     {
         if($i->id == $_GET["id"]) {
-            $i->name = $_POST["celebf_name"];
-            $i->description = $_POST["celebf_info"];
+            $i->name = htmlspecialchars($_POST["celebf_name"]);
+            $i->description = htmlspecialchars($_POST["celebf_info"]);
         }
     }
     
