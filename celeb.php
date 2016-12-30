@@ -2,14 +2,14 @@
     include 'Partials/header.php';
 if(isset($_SESSION["admin"])){
     
-    $celebs = simplexml_load_file($_SERVER['DOCUMENT_ROOT'] . '/HallOfFameDB/XML/celebs.xml'); 
+    $celebs = simplexml_load_file('XML/celebs.xml'); 
     foreach($celebs->celeb as $i){
         if($i->id == $_GET["id"]){
             $edit = $i;
         }
     }
     if(!isset($edit)) echo("<script>alert('No celeb with that id!');
-        window.location.href='/HallOfFameDB/index.php';
+        window.location.href='index.php';
         </script>");
 ?>        
 <div class = "container">
