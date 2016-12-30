@@ -48,3 +48,34 @@ Lista fajlova:
 -index.html (odavde se loadaju sve ostale stranice)
 -js/scripts.js (JavaScripte)
 -img/celeb.jpg (slika testna)
+
+# Spirala 3
+
+Urađeno je:
+-Login. Username: admin , Password: admin
+-Serializacija i deserializacija XML. Omoguceno da admin unosi, brise i mjenja podatke.
+-Prikazivanje podataka.
+-CSV file download i save
+-PDF file download
+-Deploy na OpenShift(http://halloffame-wtproject.44fs.preview.openshiftapps.com/)
+
+Lista fajlova(novi i modifikovani):
+-add_celebs.php
+-adminlogin.php
+-adminpanel.php
+-celeb.php
+-contact.php
+-editCeleb.php
+-fpdf.php
+-galler.php
+-index.php
+-Partials/addCeleb.php
+-Partials/csvDownload.php
+-Partials/delete.php
+-Partials/edit.php
+-Partials/header.php
+-Partials/footer.php
+-Partials/login.php
+-Partials/logout.php
+-Partials/pdfDownload.php
+-fonts/ (fontovi za fpdf.php)
