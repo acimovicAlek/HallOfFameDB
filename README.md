@@ -26,7 +26,7 @@ Lista fajlova:
 -home.html
 -css/grid.css
 -css/stil.css (panirano odvojiti stilove)
- 
+
 # Spirala 2
 
 Urađeno je:
@@ -79,3 +79,26 @@ Lista fajlova(novi i modifikovani):
 -Partials/logout.php
 -Partials/pdfDownload.php
 -fonts/ (fontovi za fpdf.php)
+
+# Spirala 4
+
+Urađeno je:
+-Kreirana baza i 2 tabele vezane
+-Izmejna svog koda da koristi DB umjesto XML-a
+-Odrađen dio deploya ne openshift - baza nikao da se poveže http://halloffame-wtproject.44fs.preview.openshiftapps.com/
+-Napravljeno da se iz xml fajla upisuju podatci koji ne postoje
+
+Lista fajlova(novi i modifikovani):
+-add_celebs.php
+-addComment.php
+-adminpanel.php
+-celeb.php
+-editCeleb.php
+-Partials/addCeleb.php
+-Partials/csvDownload.php
+-Partials/delete.php
+-Partials/edit.php
+-Partials/login.php
+-Partials/pdfDownload.php
+-fonts/ (fontovi za fpdf.php)
+-partials/xmlToDB.php
