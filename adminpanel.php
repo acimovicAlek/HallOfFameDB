@@ -7,8 +7,7 @@ if(isset($_SESSION["admin"])){
                 <div class = "heading">Admin Panel!</div>
             </div>
 <?php
-$connection = new PDO('mysql:host=' . getenv('MYSQL_SERVICE_HOST') . ';port=3306;dbname=halloffamedb', 'korisnik', 'sifra');
-   $connection -> exec("set names utf8");
+$connection = new PDO('mysql:host=' . getenv('MYSQL_SERVICE_HOST') . ';port=3306;dbname=halloffamedb', 'root', '');   $connection -> exec("set names utf8");
     $query = $connection -> query("select * from celeb");
 
     if($query)
@@ -40,6 +39,9 @@ $connection = new PDO('mysql:host=' . getenv('MYSQL_SERVICE_HOST') . ';port=3306
         </form>");
         echo("<form action='Partials/pdfDownload.php' method='get'>
         <input type='submit' value='PDF DOWNLOAD'>
+        </form>");
+        echo("<form action='Partials/xmlToDB.php' method='get'>
+        <input type='submit' value='XML TO DB'>
         </form>");
     }
     ?>
