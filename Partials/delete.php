@@ -1,18 +1,12 @@
 
-<?php      
-    $celebs = simplexml_load_file('../XML/celebs.xml'); 
-    foreach($celebs->celeb as $i)
-    {
-        if($i->id == $_GET["id"]) {
-            $dom=dom_import_simplexml($i);
-            $dom->parentNode->removeChild($dom);
-        }
-    }
-    file_put_contents('../XML/celebs.xml', $celebs->asXML());
-    $content = file_get_contents('../XML/celebs.xml');
-    if(strlen($content) == 49)
-    {
-        file_put_contents('../XML/celebs.xml',"");
-    }
-    header("Location: ../index.php");   
+<?php
+
+$connection = new PDO('mysql:host=' . getenv('MYSQL_SERVICE_HOST') . ';port=3306;dbname=halloffamedb', 'korisnik', 'sifra');
+    $connection -> exec("set names utf8");
+
+    $query = $connection -> prepare("delete from celeb where id = ?");
+    $query -> bindValue(1, $_GET["id"], PDO::PARAM_INT);
+    $query -> execute();
+
+    header("Location: ../index.php");
 ?>

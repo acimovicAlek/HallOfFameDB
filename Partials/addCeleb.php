@@ -1,31 +1,10 @@
 <?php
     if(isset($_POST["celebf_name"]) && strlen(trim($_POST["celebf_name"])) != 0){
-        global $celebs;
-        $content = file_get_contents('../XML/celebs.xml');
-        if(strlen($content) != 0){
-            $celebs = simplexml_load_file('../XML/celebs.xml');
-        }else{
-            $celebs = new SimpleXMLElement('<?xml version="1.0" encoding="utf-8"?><celebs></celebs>');
-            $c = $celebs->addChild("celeb");
-            $c->addChild("id", "1");
-            $c->addChild("name" , "FIRST");
-            $c->addChild("description" , "FIRST Desc");
-            $c->addChild("file" , "celeb.jpg");
-            $file = fopen('../XML/celebs.xml',"w");
-            fwrite($file, $celebs->asXML());
-        }
-        
-        $content = file_get_contents('../XML/celebs.xml');
-        
-        echo $content;
-        
-        $count = 0;
-        foreach($celebs as $i){
-            if($i->id >$count) $count = $i->id;
-        }
-        $count = $count+1;
-        
-        
+
+        $connection = new PDO('mysql:host=' . getenv('MYSQL_SERVICE_HOST') . ';port=3306;dbname=halloffamedb', 'korisnik', 'sifra');
+        $connection -> exec("set names utf8");
+
+
         $target_dir = "../img/";
         $target_file = $target_dir . basename($_FILES["celeb_image"]["name"]);
         $uploadOk = 1;
@@ -68,15 +47,15 @@
         echo "Sorry, there was an error uploading your file.";
         }
         }
-        
-        $new = "><celeb><id>".($count+1)."</id><name>".htmlspecialchars($_POST['celebf_name'])."</name><description>".htmlspecialchars($_POST["celebf_info"])." </description><file>".basename($_FILES["celeb_image"]["name"])."</file></celeb></celebs>";
-        $content = substr($content,0,strlen($content)-10).$new;
-        
-        file_put_contents('../XML/celebs.xml', $content);
 
-        
+        $query = $connection -> prepare("insert into celeb set name = ? , description = ? , file = ? " );
+        $query -> bindValue(1, $_POST['celebf_name'], PDO::PARAM_STR);
+        $query -> bindValue(2, $_POST['celebf_info'], PDO::PARAM_STR);
+        $query -> bindValue(3, basename($_FILES["celeb_image"]["name"]), PDO::PARAM_STR);
+        $query -> execute();
+
         header("Location: ../index.php");
-        
+
     }
 
 header("Location: ../index.php");

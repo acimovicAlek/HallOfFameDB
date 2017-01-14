@@ -1,16 +1,22 @@
-<?php 
+<?php
 session_start();
     if(!isset($_POST["uname"]) || !isset($_POST["psw"])){
         session_destroy();
         echo("<script>alert('Fields are empty.');
         window.location.href='../adminlogin.php';</script>");
     }
-    
-    $feed = file_get_contents('../XML/admins.xml');
-    $admins = simplexml_load_string($feed);
-    if($_POST["uname"] == $admins->username && $_POST["psw"] == $admins->password)
+
+    $connection = new PDO('mysql:host=' . getenv('MYSQL_SERVICE_HOST') . ';port=3306;dbname=halloffamedb', 'korisnik', 'sifra');
+    $connection -> exec("set names utf8");
+
+    $query = $connection -> prepare("SELECT * FROM celeb WHERE username = ? and password = ? ");
+    $query -> bindValue(1, $_POST["uname"], PDO::PARAM_STR);
+    $query -> bindValue(2, $_POST["psw"], PDO::PARAM_STR);
+
+
+    if($query)
     {
-        $_SESSION["admin"] = $_POST["uname"];  
+        $_SESSION["admin"] = $_POST["uname"];
         echo("<script>alert('Sucess!');
         window.location.href='../index.php';</script>
         ");
