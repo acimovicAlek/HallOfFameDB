@@ -1,5 +1,6 @@
 <?php
-$connection = new PDO('mysql:host=' . getenv('MYSQL_SERVICE_HOST') . ';port=3306;dbname=halloffamedb', 'root', '');    $connection -> exec("set names utf8");
+$connection = new PDO('mysql:host=' . getenv('MYSQL_SERVICE_HOST') . ';port=3306;dbname=halloffamedb', 'korisnik', 'sifra');
+    $connection -> exec("set names utf8");
     if ($connection) {
         $celebs = $connection->query("select * from celeb");
 

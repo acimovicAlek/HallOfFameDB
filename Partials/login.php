@@ -6,7 +6,8 @@ session_start();
         window.location.href='../adminlogin.php';</script>");
     }
 
-$connection = new PDO('mysql:host=' . getenv('MYSQL_SERVICE_HOST') . ';port=3306;dbname=halloffamedb', 'root', '');    $connection -> exec("set names utf8");
+    $connection = new PDO('mysql:host=' . getenv('MYSQL_SERVICE_HOST') . ';port=3306;dbname=halloffamedb', 'korisnik', 'sifra');
+   $connection -> exec("set names utf8");
 
     $query = $connection -> prepare("SELECT * FROM celeb WHERE username = ? and password = ? ");
     $query -> bindValue(1, $_POST["uname"], PDO::PARAM_STR);
